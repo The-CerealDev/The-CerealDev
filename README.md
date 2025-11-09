@@ -1,16 +1,25 @@
-## Hi there 👋
 
-<!--
-**The-CerealDev/The-CerealDev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# I'm David 😭
 
-Here are some ideas to get you started:
+- I'm currently working on [project/area]
+- I'm currently learning React, Tailwind, JS
+- I'm looking to collaborate on Web Apps, Python Scripts, more...
+- How to reach me: [Linkedin](https://www.linkedin.com/in/cerealdev/)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Tech Stack
+
+<p align="left" title="Skills: Python, HTML5, CSS3, JavaScript">
+  <img src="https://skillicons.dev/icons?i=python,html,css,js" />
+</p>
+          
+
+                  
+
+## GitHub Stats
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=The-CerealDev&theme=dark)
+
+## Projects
+⏐ ⏐ ⏐ ⏐ ⏐ ⏐ ⏐<br>
+⏐ ⏐ ⏐ ⏐ ⏐ ⏐ ⏐<br>
+⏐ ⏐ ⏐ ⏐ ⏐ ⏐ ⏐<br>
+v v v v v v v
