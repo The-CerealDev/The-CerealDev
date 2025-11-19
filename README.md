@@ -9,7 +9,7 @@
 ## Tech Stack
 
 <p align="left" title="Skills: Python, HTML5, CSS3, JavaScript">
-  <img src="https://skillicons.dev/icons?i=python,html,css,js" />
+  <img src="https://skillicons.dev/icons?i=python,html,css,js,react" />
 </p>
 
 ## GitHub Stats
