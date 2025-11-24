@@ -2,6 +2,7 @@
 # I'm David 😭
 
 - I'm currently working on [Task-Tamer(Event-Driven Task Management Application)](https://github.com/SFH6-Devs/task-tamer)
+And Algo Trading Simulator 
 - I'm currently learning React, Tailwind, JS
 - I'm looking to collaborate on Web Apps, Python Scripts, more...
 - How to reach me: [Linkedin](https://www.linkedin.com/in/cerealdev/)
