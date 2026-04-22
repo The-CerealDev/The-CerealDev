@@ -1,8 +1,8 @@
 # David
 
-Currently working on:
-- [Task-Tamer](https://github.com/SFH6-Devs/task-tamer) — event-driven task management beginner app that the dev club is working on
-- Algo Trading Simulator — Python-based backtesting tool (private)
+Currently working on:-
+- [Task-Tamer](https://github.com/SFH6-Devs/task-tamer) — Team training project for the Dev Club
+- Vectorised backtesting library in Python (private)
 
 Open to collaboration on:
 - Web applications
@@ -10,5 +10,5 @@ Open to collaboration on:
 - Trading strategy backtesting
 
 Contact:
-- LinkedIn: https://www.linkedin.com/in/cerealdev/
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/cerealdev/)
 
