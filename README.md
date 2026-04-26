@@ -7,7 +7,7 @@ Currently working on:-
 Open to collaboration on:
 - Web applications
 - Python tools
-- Trading strategy backtesting
+- Maths Projects
 
 Contact:
 - LinkedIn: [Linkedin](https://www.linkedin.com/in/cerealdev/)
