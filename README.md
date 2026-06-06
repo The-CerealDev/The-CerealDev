@@ -1,6 +1,7 @@
 # David
 
 Currently working on:
+- [py-scrape](https://github.com/The-CerealDev/py-scrape) - A python automated pipeline for scraping financial data on asset managers for financial research
 - [fode-tools](https://github.com/The-CerealDev/fode-tools) - Set of tools for numerical analysis of differential equations (First)
 - [Task-Tamer](https://github.com/SFH6-Devs/task-tamer) - Team training project for the Dev Club
 - Vectorised backtesting library in Python (private)
