@@ -10,6 +10,7 @@ Open to collaboration on:
 - Web applications
 - Python tools
 - Maths Projects
+- Hackathons
 
 Contact:
 - LinkedIn: [Linkedin](https://www.linkedin.com/in/cerealdev/)
