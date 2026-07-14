@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customizable Diff Eq Background</title>
+    <style>
+        body, html { margin: 0; padding: 0; overflow: hidden; background-color: #fdfbf7; font-family: sans-serif; }
+        canvas { display: block; position: absolute; top: 0; left: 0; z-index: 1; }
+        #toolbar {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            backdrop-filter: blur(8px);
+        }
+        input {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 6px;
+            font-family: monospace;
+            width: 150px;
+            background: rgba(255,255,255,0.8);
+            outline: none;
+        }
+        input:focus { border-color: #aaa; }
+        label { font-size: 12px; color: #666; font-weight: bold;}
+        button {
+            background: #333; color: #fff; border: none; padding: 8px;
+            border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold;
+            transition: background 0.2s;
+        }
+        button:hover { background: #555; }
+    </style>
+</head>
+<body>
+    <canvas id="c"></canvas>
+    <div id="toolbar">
+        <div>
+            <label>dx/dt = </label>
+            <input type="text" id="eqX" value="Math.sin(y)">
+        </div>
+        <div>
+            <label>dy/dt = </label>
+            <input type="text" id="eqY" value="Math.cos(x)">
+        </div>
+        <button id="updateBtn">Apply</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('c');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        const numParticles = 800;
+        
+        let getDX = new Function('x', 'y', 'return Math.sin(y);');
+        let getDY = new Function('x', 'y', 'return Math.cos(x);');
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        function initParticles() {
+            particles = [];
+            for(let i = 0; i < numParticles; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    age: Math.random() * 150
+                });
+            }
+            ctx.fillStyle = '#fdfbf7';
+            ctx.fillRect(0, 0, width, height);
+        }
+
+        document.getElementById('updateBtn').addEventListener('click', () => {
+            try {
+                let eqX = document.getElementById('eqX').value;
+                let eqY = document.getElementById('eqY').value;
+                getDX = new Function('x', 'y', 'return ' + eqX + ';');
+                getDY = new Function('x', 'y', 'return ' + eqY + ';');
+                
+                // Test evaluation
+                getDX(0,0); getDY(0,0);
+                
+                initParticles();
+            } catch (e) {
+                alert("Invalid equation! Use JS math like Math.sin(x), Math.cos(y), x, y.");
+            }
+        });
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        function draw() {
+            ctx.fillStyle = 'rgba(253, 251, 247, 0.04)';
+            ctx.fillRect(0, 0, width, height);
+            
+            ctx.strokeStyle = 'rgba(120, 130, 140, 0.5)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            
+            for(let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                ctx.moveTo(p.x, p.y);
+                
+                // Scale coordinates so the math visually spans from approx -5 to 5
+                let scaledX = (p.x - width/2) / (Math.min(width, height) / 10);
+                let scaledY = (p.y - height/2) / (Math.min(width, height) / 10);
+                
+                let dx = 0, dy = 0;
+                try {
+                    dx = getDX(scaledX, scaledY);
+                    dy = getDY(scaledX, scaledY);
+                } catch(e) {}
+                
+                // Scale velocities back up for pixel movement
+                p.x += dx * 2;
+                p.y += dy * 2;
+                
+                ctx.lineTo(p.x, p.y);
+                
+                p.age++;
+                if(p.x < 0 || p.x > width || p.y < 0 || p.y > height || p.age > 200) {
+                    p.x = Math.random() * width;
+                    p.y = Math.random() * height;
+                    p.age = 0;
+                }
+            }
+            ctx.stroke();
+            requestAnimationFrame(draw);
+        }
+        draw();
+    </script>
+</body>
+</html>
